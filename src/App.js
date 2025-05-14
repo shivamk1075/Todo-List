@@ -9,7 +9,8 @@ import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
         <Header title="My Todos List" searchBar={false} />
         <Routes>
           <Route
-            exact path="/"
+            path="/"
             element={
               <>
                 <AddTodo addTodo={addTodo} />
@@ -51,7 +52,8 @@ function App() {
               </>
             }
           />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </Router>

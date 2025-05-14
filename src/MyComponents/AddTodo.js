@@ -15,9 +15,11 @@ const AddTodo = ({addTodo}) => {
         setDesc("");
       }
     }
-    
+    let thisStyle={
+      margin: "40px auto"
+    }
   return (
-    <div className="container">
+    <div className="container" style={thisStyle}>
       <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">Todo Title</label>
